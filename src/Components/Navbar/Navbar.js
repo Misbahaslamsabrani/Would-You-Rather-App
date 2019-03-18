@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom"
 import Drawer from '@material-ui/core/Drawer';
 import { connect } from "react-redux"
 import Loader from '../Loader/Loader';
+import { SignOutUser } from '../../Store/Actions/AuthActions';
 
 class Navbar extends Component {
   constructor() {
@@ -18,14 +19,16 @@ class Navbar extends Component {
     });
   };
   render() {
-    const {cUser} = this.props;
+    const {UserFlag, cUser, logout} = this.props;
+    
     const firstChar = cUser.name.slice(0,1).toString().toUpperCase();
+
     const sideList = (
       <div className="list_width">
         <ul className="collection with-header">
           <li className="collection-header noborder">
             <h6 className="white-text center">
-              {this.props.User && (<div className="chip">
+              {UserFlag && (<div className="chip">
                 <img src={cUser.avatarURL[`${firstChar}`]} alt="Contact Person" />
                 {cUser.name}
                   </div>)}
@@ -59,20 +62,20 @@ class Navbar extends Component {
             </NavLink>
           </li>
           <li className="collection-item">
-            <NavLink to="/logout" className="grey-text darken-4">
+            <span className="grey-text darken-4 form_a" onClick={() => logout()}>
               <span className="btn-small btn-floating purple lighten-1">
                 <i className="material-icons">exit_to_app</i>
               </span>
               &nbsp;
               Sign Out
-            </NavLink>
+            </span>
           </li>
         </ul>
       </div>
     );
     return (
       <div>
-        {this.props.User ? (<Fragment><nav className="nav-wrapper purple darken-1">
+        {UserFlag ? (<Fragment><nav className="nav-wrapper purple darken-1">
           <div className="container">
             <span onClick={this.toggleDrawer(true)} className="btn-small btn-floating transparent">
               <i className="material-icons">menu</i>
@@ -97,12 +100,12 @@ class Navbar extends Component {
 const mapStateToProps = (state) => {
   return {
         cUser: state.auth.currentUser,
-
+        UserFlag: state.auth.currentUserFlag,
   }
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    User: true,
+    logout: () => dispatch(SignOutUser()),
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

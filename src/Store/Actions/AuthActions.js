@@ -9,7 +9,5 @@ export const SignInUser = (user) => {
     return {type: Types.signIn, cuser: user}
 }
 export const SignOutUser = () => {
-    return dispatch => {
-
-    }
+    return {type: Types.logout}
 }

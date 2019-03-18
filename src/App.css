@@ -7,3 +7,7 @@
   }
 .Logo{width: 550px !important;
 height: 420px !important; margin: auto;}
+
+.form_a{
+  cursor: pointer;
+}
