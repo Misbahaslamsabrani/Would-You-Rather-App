@@ -25,7 +25,7 @@ class Navbar extends Component {
 
     const sideList = (
       <div className="list_width">
-        <ul className="collection with-header">
+        <ul className="collection with-header noborder">
           <li className="collection-header noborder">
             <h6 className="white-text center">
               {UserFlag && (<div className="chip">
@@ -34,7 +34,7 @@ class Navbar extends Component {
                   </div>)}
             </h6>
           </li>
-          <li className="collection-item">
+          <li className="collection-item noborder">
             <NavLink to="/" className="grey-text darken-4">
               <span className="btn-small btn-floating purple lighten-1">
                 <i className="material-icons">home</i>
@@ -43,7 +43,7 @@ class Navbar extends Component {
               Home
             </NavLink>
           </li>
-          <li className="collection-item">
+          <li className="collection-item noborder">
             <NavLink to="/newQuestion" className="grey-text darken-4">
               <span className="btn-small btn-floating purple lighten-1">
                 <i className="material-icons">insert_comment</i>
@@ -61,7 +61,7 @@ class Navbar extends Component {
               Leader Board
             </NavLink>
           </li>
-          <li className="collection-item">
+          <li className="collection-item noborder">
             <span className="grey-text darken-4 form_a" onClick={() => logout()}>
               <span className="btn-small btn-floating purple lighten-1">
                 <i className="material-icons">exit_to_app</i>

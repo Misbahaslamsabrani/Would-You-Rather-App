@@ -7,6 +7,7 @@ import Home from './DashBoard/Home';
 import SignIn from './Auth/SignIn';
 import { GET_USERS } from '../Store/Actions/AuthActions';
 import { GET_QUESTIONS } from '../Store/Actions/QuestionsActions';
+import LeaderBoard from './DashBoard/LeaderBoard';
 
 class App extends Component {
   componentDidMount(){
@@ -20,10 +21,9 @@ class App extends Component {
         <Fragment>
           <Navbar />
         <Switch>
-        <Route path="/" component={Home} />
-        {/* <Route path="/leaderBoard" component={} /> 
-        <Route path="newQuestion" component={} /> 
-        <Route path="logout" component={} /> 
+        <Route exact path="/" component={Home} />
+        <Route exact path="/leaderBoard" component={LeaderBoard} /> 
+         {/*  <Route exact path="newQuestion" component={} />  
         <Route path="" component={} /> 
         <Route path="" component={} /> 
         <Route path="" component={} /> 

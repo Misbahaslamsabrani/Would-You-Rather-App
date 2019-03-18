@@ -1,4 +1,4 @@
-import J from "./images/j.jpg"
+import J from "./images/j.png"
 import S from "./images/s.png"
 import T from "./images/t.png"
 

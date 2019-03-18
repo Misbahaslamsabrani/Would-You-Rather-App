@@ -5,6 +5,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import AvatarComponent from './Avatar';
 
 const styles = theme => ({
   root: {
@@ -15,7 +16,7 @@ const styles = theme => ({
     margin: "20px auto",
   },
 });
-class DropDown extends Component{
+class DropDown extends Component {
   state = {
     anchorEl: null,
   };
@@ -25,7 +26,7 @@ class DropDown extends Component{
   };
 
   handleMenuItemClick = () => {
-    this.setState({anchorEl: null });
+    this.setState({ anchorEl: null });
   };
 
   handleClose = () => {
@@ -34,7 +35,7 @@ class DropDown extends Component{
 
   render() {
     const { anchorEl } = this.state;
-    const {SI, shandle, classes, allUsers}= this.props;
+    const { SI, shandle, classes, allUsers } = this.props;
     return (
       <div className={classes.root}>
         <List>
@@ -42,11 +43,11 @@ class DropDown extends Component{
             button
             aria-haspopup="true"
             aria-controls="lock-menu"
-            aria-label="When device is locked"
+            aria-label="Select User"
             onClick={this.handleClickListItem}
           >
             <ListItemText
-              primary="Please Choose An Account in order to SignIn"
+              primary="Select User"
               secondary={allUsers[SI] && allUsers[SI].name}
             />
           </ListItem>
@@ -61,9 +62,12 @@ class DropDown extends Component{
             <MenuItem
               key={option.id}
               selected={index === SI}
-              onClick={event => {shandle(event, index) 
-                this.handleMenuItemClick()}}
+              onClick={event => {
+                shandle(event, index)
+                this.handleMenuItemClick()
+              }}
             >
+            <AvatarComponent userName={option.name} av={option.avatarURL} cn="avatar"/>
               {option.name}
             </MenuItem>
           ))}

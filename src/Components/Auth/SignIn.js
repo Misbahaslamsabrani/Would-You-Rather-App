@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DropDown from '../UIComponents/DropDown';
+import DropDown from '../ReUsableComponents/DropDown';
 import Logo from "../../images/logo.png"
 import { SignInUser } from '../../Store/Actions/AuthActions';
 import { connect } from 'react-redux';
@@ -33,9 +33,13 @@ class SignIn extends Component {
                                 <div className="card-title center white-text purple lighten-1">
                                     <h4>Welcome to the Would You Rather App</h4>
                                 </div>
+                                <div className="center"><h5>Please sign in to continue</h5></div>
                                 <div className="card-image">
                                     <img src={Logo} alt="logo" className="Logo" />
                                 </div>
+                                <div className="purple-text center flow-text">
+                                
+                                <b>Sign in</b></div>
                                 <div className="center">
                                     <DropDown
                                         SI={selectedIndex}
@@ -48,7 +52,7 @@ class SignIn extends Component {
                                             disabled={this.whenNotSelected()}
                                             onClick={this.whenSignIn}
                                         >
-                                            SignIn
+                                            Sign In
                                         </button>
                                     </div>
                                 </div>
