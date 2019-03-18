@@ -1,13 +1,14 @@
 # Would You Rather Project
+Would you rather is a ReactJS app that allows a user to login, ask and answer different poll questions. It will also show a leaderboard based on the number of questions each user has asked and answered.
 
-## Installation
+### Installation
 In order to install and use this project you must run two commands in the console.
 1) `npm install`
 2) `npm start`
 
 These two commands will install all of the dependencies needed for this project and will start the server
 
-### Data
+#### Data
 
 There are two types of objects stored in our database:
 

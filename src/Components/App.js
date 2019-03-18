@@ -4,15 +4,19 @@ import {connect} from "react-redux";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Navbar from './Navbar/Navbar';
 import Home from './DashBoard/Home';
+import SignIn from './Auth/SignIn';
+import { GET_USERS } from '../Store/Actions/AuthActions';
+import { GET_QUESTIONS } from '../Store/Actions/QuestionsActions';
 
 class App extends Component {
   componentDidMount(){
-
+    this.props.getUsers();
+    this.props.getQuestions();
   }
   render() {
     return (
       <div className="App">
-      <Router>
+      {this.props.userFlag ? (<Router>
         <Fragment>
           <Navbar />
         <Switch>
@@ -29,10 +33,22 @@ class App extends Component {
         <Route path="" component={} />  */}
         </Switch>
         </Fragment>
-      </Router>
+      </Router>) : (<SignIn />)}
       </div>
     );
   }
 }
-
-export default connect()(App);
+const mapStateToProps = (state) => {
+  console.log(state)
+  return{
+    user: state.auth.currentUser,
+    userFlag: state.auth.currentUserFlag,
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getUsers : () => dispatch(GET_USERS()),
+    getQuestions: () => dispatch(GET_QUESTIONS()),
+  }
+} 
+export default connect(mapStateToProps, mapDispatchToProps)(App);
