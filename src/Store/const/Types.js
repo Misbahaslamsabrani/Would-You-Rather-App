@@ -5,5 +5,6 @@ const Types = {
     allQuestions: "ALL_QUESTIONS",
     addingQuestion: "ADDING_QUESTION",
     removeMessage: "REMOVING_SUBMITTED_QUESTION_MESSAGE",
+    addingAnswer: "ADDING_ANSWER",
 }
 export default Types;

@@ -9,6 +9,8 @@ import { GET_USERS } from '../Store/Actions/AuthActions';
 import { GET_QUESTIONS } from '../Store/Actions/QuestionsActions';
 import LeaderBoard from './DashBoard/LeaderBoard';
 import NewQuetion from './DashBoard/NewQuetion';
+import AnswerQuestion from './ReUsableComponents/AnswerQuestion';
+import ViewPoll from './ReUsableComponents/ViewPoll';
 
 class App extends Component {
   componentDidMount() {
@@ -25,6 +27,8 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route exact path="/leaderBoard" component={LeaderBoard} />
               <Route exact path="/newQuestion" component={NewQuetion} />
+              <Route exact path="/answerQuestion/:id" component={AnswerQuestion} />
+              <Route exact path="/viewPoll/:id" component={ViewPoll} />
             </Switch>
           </Fragment>
         </Router>) : (<SignIn />)}
@@ -33,7 +37,6 @@ class App extends Component {
   }
 }
 const mapStateToProps = (state) => {
-
   return {
     user: state.auth.currentUser,
     userFlag: state.auth.currentUserFlag,

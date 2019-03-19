@@ -25,6 +25,10 @@ const QuestionsReducers = (state = initialState, action) => {
             ...state,
             questionAddedMessage: false,
         }
+        case Types.addingAnswer: 
+        return state = {
+            ...state,
+        }
         default:
             return state;
     }

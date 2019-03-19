@@ -1,5 +1,5 @@
 import Types from "../const/Types";
-import { _getQuestions, _saveQuestion, } from "../../_DATA";
+import { _getQuestions, _saveQuestion, _saveQuestionAnswer } from "../../_DATA";
 
 export const GET_QUESTIONS = () => {
     return dispatch => {
@@ -15,4 +15,11 @@ export const Add_NEW_QUESTION = (question) => {
 }
 export const Remove_Message = () => {
     return {type: Types.removeMessage}
+}
+
+export const ADD_ANSWER = (authedUser, qid, answer) => {
+    return dispatch => {
+        _saveQuestionAnswer({authedUser, qid, answer}).then(data => 
+        dispatch({type: Types.addingAnswer}))
+    }
 }
