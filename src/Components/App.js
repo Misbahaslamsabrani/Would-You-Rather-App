@@ -33,7 +33,7 @@ class App extends Component {
   }
 }
 const mapStateToProps = (state) => {
-  console.log(state)
+
   return {
     user: state.auth.currentUser,
     userFlag: state.auth.currentUserFlag,
@@ -46,15 +46,3 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(App);
-
-
-
-
-
-{/*  <Route path="" component={} /> 
-        <Route path="" component={} /> 
-        <Route path="" component={} /> 
-        <Route path="" component={} /> 
-        <Route path="" component={} /> 
-        <Route path="" component={} /> 
-        <Route path="" component={} />  */}

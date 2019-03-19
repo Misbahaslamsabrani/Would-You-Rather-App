@@ -11,19 +11,29 @@ class Home extends Component {
     };
     render() {
         const { value } = this.state;
-        const {Cuser} = this.props;
+        const {answeredQuestions, unAnsweredQuestions, allUsers} = this.props;
+        const Questions = value === 0 ? unAnsweredQuestions.reverse() : answeredQuestions.reverse();
         return (
             <div className="container">
                 <TabBar wc={this.handleChange} value={value} />
-                <Question />
+                {Questions.map(v => <Question key={v.id} question={v} postedBy={allUsers.find(u => v.author === u.id)}/>)}
             </div>
         );
     }
 }
-const mapStateToProps = (state) => {
+const mapStateToProps = ({que, auth}) => {
+    const CuserId = auth.currentUser.id;
     return {
-        Cuser: state.auth.currentUser,
-        allQuestions: state.que.AllQuestions,
+        answeredQuestions: que.AllQuestions.filter(q => 
+              (q.optionOne.votes.indexOf(CuserId) !== -1 ||
+              q.optionTwo.votes.indexOf(CuserId) !== -1)
+              ),
+        unAnsweredQuestions: que.AllQuestions.filter(q => 
+              (q.optionOne.votes.indexOf(CuserId) === -1 &&
+              q.optionTwo.votes.indexOf(CuserId) === -1)
+          ),
+        allUsers: auth.AllUsers,
+
     }
 }
 export default connect(mapStateToProps)(Home);
