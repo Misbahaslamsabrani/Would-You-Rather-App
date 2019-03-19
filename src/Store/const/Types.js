@@ -3,6 +3,7 @@ const Types = {
     logout: "Logging_out",
     allUsers: "ALL_USERS",
     allQuestions: "ALL_QUESTIONS",
-
+    addingQuestion: "ADDING_QUESTION",
+    removeMessage: "REMOVING_SUBMITTED_QUESTION_MESSAGE",
 }
 export default Types;

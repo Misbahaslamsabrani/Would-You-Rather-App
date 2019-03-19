@@ -20,8 +20,6 @@ class Navbar extends Component {
   };
   render() {
     const {UserFlag, cUser, logout} = this.props;
-    
-    const firstChar = cUser.name.slice(0,1).toString().toUpperCase();
 
     const sideList = (
       <div className="list_width">
@@ -29,7 +27,7 @@ class Navbar extends Component {
           <li className="collection-header noborder">
             <h6 className="white-text center">
               {UserFlag && (<div className="chip">
-                <img src={cUser.avatarURL[`${firstChar}`]} alt="Contact Person" />
+                <img src={cUser.avatarURL} alt="Contact Person" />
                 {cUser.name}
                   </div>)}
             </h6>

@@ -11,18 +11,19 @@ class Home extends Component {
     };
     render() {
         const { value } = this.state;
-        const {user} = this.props;
+        const {Cuser} = this.props;
         return (
             <div className="container">
                 <TabBar wc={this.handleChange} value={value} />
-                <Question User={user}/>
+                <Question />
             </div>
         );
     }
 }
-const mapStateToProps = (state) =>{
+const mapStateToProps = (state) => {
     return {
-        user: state.auth.currentUser,
+        Cuser: state.auth.currentUser,
+        allQuestions: state.que.AllQuestions,
     }
 }
 export default connect(mapStateToProps)(Home);

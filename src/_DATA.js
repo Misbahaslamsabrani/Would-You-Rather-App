@@ -1,12 +1,10 @@
-import J from "./images/j.png"
-import S from "./images/s.png"
-import T from "./images/t.png"
+
 
 let users = {
   sarahedo: {
     id: 'sarahedo',
     name: 'Sarah Edo',
-    avatarURL: {S},
+    avatarURL: "http://i.pravatar.cc/150?img=31",
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -18,7 +16,7 @@ let users = {
   tylermcginnis: {
     id: 'tylermcginnis',
     name: 'Tyler McGinnis',
-    avatarURL: {T},
+    avatarURL: "http://i.pravatar.cc/150?img=51",
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -28,7 +26,7 @@ let users = {
   johndoe: {
     id: 'johndoe',
     name: 'John Doe',
-    avatarURL: {J},
+    avatarURL: "http://i.pravatar.cc/150?img=58",
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',

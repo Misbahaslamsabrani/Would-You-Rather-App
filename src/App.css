@@ -1,16 +1,64 @@
-.list_width{width: 250px;}
-.noborder{border: none !important;}
+.list_width{
+  width: 250px;
+  }
+
+.noborder{
+  border: none !important;
+  }
+
 .bigAvatar{
     margin: 10;
     width: 60;
     height: 60;
   }
+
 .avatar{
     margin: 10;
   }
-.Logo{width: 350px !important;
-height: 300px !important; margin: auto;}
+
+.Logo{
+  width: 350px !important;
+  height: 300px !important; 
+  margin: auto;
+  }
 
 .form_a{
   cursor: pointer;
+  }
+
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=number]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]){
+  border-color: rgb(168, 37, 168);
+  box-shadow: none;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]) + label,
+input[type=email]:not(.browser-default):focus:not([readonly]) + label,
+input[type=number]:not(.browser-default):focus:not([readonly]) + label,
+textarea.materialize-textarea:focus:not([readonly]) + label,
+input[type=password]:not(.browser-default):focus:not([readonly]) + label{
+  color:rgb(168, 37, 168) !important;
+}
+
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:before,
+[type="radio"].with-gap:checked + span:after {
+  border: 2px solid rgb(168, 37, 168);
+}
+
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:after {
+  background-color: rgb(168, 37, 168);
+}
+
+.crossButton{
+  width: 19px;
+  height: 19px;
+  border: none;
+  background-color: none;
+  margin-left: 13px;
+  text-align: center
 }

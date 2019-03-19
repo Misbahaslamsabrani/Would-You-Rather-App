@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch) => {
 
     }
 }
-export default connect()(LeaderBoard);
+export default connect(mapSateToProps, mapDispatchToProps)(LeaderBoard);

@@ -11,7 +11,7 @@ const styles = theme => ({
   root: {
     width: '100%',
     maxWidth: 360,
-    backgroundColor: "purple lighten-1",
+    backgroundColor: "#f9fbe7",
     boxShadow: "3px 3px 20px 5px grey",
     margin: "20px auto",
   },
@@ -67,7 +67,7 @@ class DropDown extends Component {
                 this.handleMenuItemClick()
               }}
             >
-            <AvatarComponent userName={option.name} av={option.avatarURL} cn="avatar"/>
+            <AvatarComponent av={option.avatarURL} cn="avatar"/>
               {option.name}
             </MenuItem>
           ))}

@@ -3,6 +3,7 @@ import Types from "../const/Types"
 const initialState = {
     AllQuestions: [],
     AllQuestionsFlag: false,
+    questionAddedMessage: false,
 }
 
 const QuestionsReducers = (state = initialState, action) => {
@@ -12,6 +13,17 @@ const QuestionsReducers = (state = initialState, action) => {
             ...state,
             AllQuestionsFlag: true,
             AllQuestions: action.allquestions,
+        }
+        case Types.addingQuestion:
+        return state = {
+            ...state,
+            AllQuestions: [...state.AllQuestions, action.newquestion],
+            questionAddedMessage: "Your question has been successfully submitted!"
+        };
+        case Types.removeMessage: 
+        return state = {
+            ...state,
+            questionAddedMessage: false,
         }
         default:
             return state;
