@@ -1,98 +1,50 @@
 # Would You Rather Project
-Would you rather is a ReactJS app that allows a user to login, ask and answer different poll questions. It will also show a leaderboard based on the number of questions each user has asked and answered.
+Would you rather app is a ReactJS app that contain many questions, whict are created by users. You can also create questions. 
+Are you ready to make really difficult decisions?
 
-### Installation
+# How to use app:
+Here are some steps to use app.
+
+* ### Installation
 In order to install and use this project you must run two commands in the console.
 1) `npm install`
 2) `npm start`
 
 These two commands will install all of the dependencies needed for this project and will start the server
 
-#### Data
+* ### Fisrt Page OF Page
+<img src="App%20SS/1.png">
 
-There are two types of objects stored in our database:
+Here you got `Select User` When you click on that, you will get a list of users (select one and signIn)
 
-* Users
-* Questions
+* ### Dashboard 
 
-#### Users
+<img src="App%20SS/3.png">
 
-Users include:
+on side nav you will get different options.
 
-| Attribute    | Type             | Description           |
-|-----------------|------------------|-------------------         |
-| id                 | String           | The user’s unique identifier |
-| name          | String           | The user’s first name  and last name     |
-| avatarURL  | String           | The path to the image file |
-| questions | Array | A list of ids of the polling questions this user created|
-| answers      | Object         |  The object's keys are the ids of each question this user answered. The value of each key is the answer the user selected. It can be either `'optionOne'` or `'optionTwo'` since each question has two options.
+# Home
 
-#### Questions
+on home page, you will get answered and unanswered questions tab. 
 
-Questions include:
+when click on `view poll` 
+If you have answered that question you can see the `View Poll` page. 
+If not, you will get `Answer Question` page and you have to answer that question first.
 
-| Attribute | Type | Description |
-|-----------------|------------------|-------------------|
-| id                  | String | The question’s unique identifier |
-| author        | String | The author’s unique identifier |
-| timestamp | String | The time when the question was created|
-| optionOne | Object | The first voting option|
-| optionTwo | Object | The second voting option|
+<img src="App%20SS/7.png"/> <img src="App%20SS/6.png"/>
 
-#### Voting Options
+# Create New Question
 
-Voting options are attached to questions. They include:
+Here you can also create questions and ask other users.
 
-| Attribute | Type | Description |
-|-----------------|------------------|-------------------|
-| votes             | Array | A list that contains the id of each user who voted for that option|
-| text                | String | The text of the option |
+<img src="App%20SS/8.png" />
 
-Your code will talk to the database via 4 methods:
+# Leader Board
 
-* `_getUsers()`
-* `_getQuestions()`
-* `_saveQuestion(question)`
-* `_saveQuestionAnswer(object)`
+Here you can see all users scores and who is leading.
 
-1) `_getUsers()` Method
+<img src="App%20SS/9.png" />
 
-*Description*: Get all of the existing users from the database.  
-*Return Value*: Object where the key is the user’s id and the value is the user object.
 
-2) `_getQuestions()` Method
 
-*Description*: Get all of the existing questions from the database.  
-*Return Value*: Object where the key is the question’s id and the value is the question object.
-
-3) `_saveQuestion(question)` Method
-
-*Description*: Save the polling question in the database.  
-*Parameters*:  Object that includes the following properties: `author`, `optionOneText`, and `optionTwoText`. More details about these properties:
-
-| Attribute | Type | Description |
-|-----------------|------------------|-------------------|
-| author | String | The id of the user who posted the question|
-| optionOneText| String | The text of the first option |
-| optionTwoText | String | The text of the second option |
-
-*Return Value*:  An object that has the following properties: `id`, `author`, `optionOne`, `optionTwo`, `timestamp`. More details about these properties:
-
-| Attribute | Type | Description |
-|-----------------|------------------|-------------------|
-| id | String | The id of the question that was posted|
-| author | String | The id of the user who posted the question|
-| optionOne | Object | The object has a text property and a votes property, which stores an array of the ids of the users who voted for that option|
-| optionTwo | Object | The object has a text property and a votes property, which stores an array of the ids of the users who voted for that option|
-|timestamp|String | The time when the question was created|
-
-4) `_saveQuestionAnswer(object)` Method
-
-*Description*: Save the answer to a particular polling question in the database.
-*Parameters*: Object that contains the following properties: `authedUser`, `qid`, and `answer`. More details about these properties:
-
-| Attribute | Type | Description |
-|-----------------|------------------|-------------------|
-| authedUser | String | The id of the user who answered the question|
-| qid | String | The id of the question that was answered|
-| answer | String | The option the user selected. The value should be either `"optionOne"` or `"optionTwo"`|
+ 
