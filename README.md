@@ -12,14 +12,14 @@ In order to install and use this project you must run two commands in the consol
 
 These two commands will install all of the dependencies needed for this project and will start the server
 
-* ### Fisrt Page OF Page
+* ## Fisrt Page OF App
 <img src="App%20SS/1.png">
 
 Here you got `Select User` When you click on that, you will get a list of users (select one and signIn)
 
 * ### Dashboard 
 
-<img src="App%20SS/3.png">
+<img src="App%20SS/3.png" height="350" />
 
 on side nav you will get different options.
 
@@ -27,23 +27,25 @@ on side nav you will get different options.
 
 on home page, you will get answered and unanswered questions tab. 
 
+<img src="App%20SS/4.png" height="150" />
+
 when click on `view poll` 
 If you have answered that question you can see the `View Poll` page. 
 If not, you will get `Answer Question` page and you have to answer that question first.
 
-<img src="App%20SS/7.png"/> <img src="App%20SS/6.png"/>
+<img src="App%20SS/7.png" height="150"/> <img src="App%20SS/6.png" height="150"/>
 
 # Create New Question
 
 Here you can also create questions and ask other users.
 
-<img src="App%20SS/8.png" />
+<img src="App%20SS/8.png" height="150"/>
 
 # Leader Board
 
 Here you can see all users scores and who is leading.
 
-<img src="App%20SS/9.png" />
+<img src="App%20SS/9.png" height="200"/>
 
 
 
