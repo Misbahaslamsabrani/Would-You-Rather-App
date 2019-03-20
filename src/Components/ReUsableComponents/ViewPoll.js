@@ -14,7 +14,7 @@ class ViewPoll extends Component {
             <div className="container">
                 <br />
                 <div className="row">
-                    <div className="col s12 m10 l7 offset-l2 offset-m2">
+                    <div className="col s12 m10 l8 offset-l2 offset-m2">
                         <div className="card horizontal">
                             <div className="card-image">
                                 <img src={postedBy.avatarURL} alt="userPic" />
@@ -31,6 +31,7 @@ class ViewPoll extends Component {
                                                 <b> Would you rather {question.optionOne.text} ? </b>
                                                 {question.optionOne.votes.some(v => v === cUserId) && <span className="badge purple lighten-1 white-text">Your Vote</span>}
                                             </div>
+                                            <br />
                                             <div className="progress" style={{ width: `${perOne}%`, backgroundColor: "purple" }}>
                                             </div>
                                             <BadgeCom value={`${first} out of ${total} votes.`} badgeText={`${perOne}%`} />
@@ -40,6 +41,7 @@ class ViewPoll extends Component {
                                                 <b> Would you rather {question.optionTwo.text} ? </b>
                                                 {question.optionTwo.votes.some(v => v === cUserId) && <span className="badge purple lighten-1 white-text">Your Vote</span>}
                                             </div>
+                                            <br />
                                             <div className="progress" style={{ width: `${perTwo}%`, backgroundColor: "purple" }}>
                                             </div>
                                             <BadgeCom value={`${second} out of ${total} votes.`} badgeText={`${perTwo}%`} />
@@ -58,22 +60,20 @@ const mapStateToProps = (state, ownProps) => {
     const questionId = ownProps.match.params.id;
     const cUserId = state.auth.currentUser.id;
     const question = state.que.AllQuestions.find(v => v.id === questionId);
-    console.log(question.optionOne.votes, question.optionTwo.votes);
     const postedBy = state.auth.AllUsers.find(v => v.id === question.author);
     const first = question.optionOne.votes.length;
     const second = question.optionTwo.votes.length;
-    const total = first + second;
+    const total = first + second
     const perOne = Math.round(first / total * 100);
     const perTwo = Math.round(second / total * 100);
-    console.log(first, second, total, perOne, perTwo)
     return {
         question,
         postedBy,
         first,
         second,
         total,
-        perOne,
-        perTwo,
+        perOne: isNaN(perOne) ? 0 : perOne,
+        perTwo: isNaN(perTwo) ? 0 : perTwo,
         cUserId,
     }
 }

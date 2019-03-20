@@ -35,7 +35,7 @@ class NewQuestion extends Component {
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col l8 m8 s12 offset-l2 offset-m2">
+                    <div className="col l10 m10 s12 offset-l1 offset-m1">
                         <div className="card lime lighten-5">
                             <div className="card-content">
                                 <div className="card-title center purple-text">

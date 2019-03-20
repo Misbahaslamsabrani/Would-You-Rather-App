@@ -62,3 +62,5 @@ input[type=password]:not(.browser-default):focus:not([readonly]) + label{
   margin-left: 13px;
   text-align: center
 }
+
+.userPic{width: 300px !important; height: 250px;}

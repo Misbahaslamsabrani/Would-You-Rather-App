@@ -23,7 +23,7 @@ class Home extends Component {
                     wc={this.handleChange}
                     value={value}
                 />
-                {
+                {   Questions.length > 0 ? (
                     Questions.map(v => <Question
                         key={v.id}
                         question={v}
@@ -33,6 +33,7 @@ class Home extends Component {
                         check="Home"
                     />
                     )
+                    ) : (<div className="center grey-text darken-1"><h5>Yayy! you answered all questions.</h5></div>)
                 }
             </div>
         );
