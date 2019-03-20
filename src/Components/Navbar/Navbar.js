@@ -19,7 +19,7 @@ class Navbar extends Component {
     });
   };
   render() {
-    const {UserFlag, cUser, logout} = this.props;
+    const { UserFlag, cUser, logout } = this.props;
 
     const sideList = (
       <div className="list_width">
@@ -29,7 +29,7 @@ class Navbar extends Component {
               {UserFlag && (<div className="chip">
                 <img src={cUser.avatarURL} alt="Contact Person" />
                 {cUser.name}
-                  </div>)}
+              </div>)}
             </h6>
           </li>
           <li className="collection-item noborder">
@@ -81,7 +81,7 @@ class Navbar extends Component {
             &nbsp;
             &nbsp;
             &nbsp;
-        <span className="flow-text purple darken-1 hide-on-large-only">Would You Rather App</span>
+            <span className="flow-text purple darken-1 hide-on-large-only">Would You Rather App</span>
             <Drawer open={this.state.left} onClose={this.toggleDrawer(false)}>
               <div onClick={this.toggleDrawer(false)}>
                 {sideList}
@@ -97,8 +97,8 @@ class Navbar extends Component {
 }
 const mapStateToProps = (state) => {
   return {
-        cUser: state.auth.currentUser,
-        UserFlag: state.auth.currentUserFlag,
+    cUser: state.auth.currentUser,
+    UserFlag: state.auth.currentUserFlag,
   }
 }
 const mapDispatchToProps = (dispatch) => {

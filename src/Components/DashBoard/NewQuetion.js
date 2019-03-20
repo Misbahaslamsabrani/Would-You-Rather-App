@@ -26,7 +26,7 @@ class NewQuestion extends Component {
     whenEmpty = () => {
         return this.state.Option1 === "" || this.state.Option2 === ""
     }
-    componentWillUnmount(){
+    componentWillUnmount() {
         this.props.removeMess();
     }
     render() {

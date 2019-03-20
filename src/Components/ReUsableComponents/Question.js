@@ -31,7 +31,6 @@ const Question = (props) => {
                             }
                         </div>
                         <div className="card-action">
-
                             <button className="btn-small purple lighten-1"
                                 disabled={we ? we() : we}
                                 onClick={() => oc(question.id)}>{bText}</button>

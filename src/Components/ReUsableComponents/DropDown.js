@@ -67,7 +67,7 @@ class DropDown extends Component {
                 this.handleMenuItemClick()
               }}
             >
-            <AvatarComponent av={option.avatarURL} cn="avatar"/>
+              <AvatarComponent av={option.avatarURL} cn="avatar" />
               {option.name}
             </MenuItem>
           ))}

@@ -11,9 +11,7 @@ const LeaderBoard = (props) => {
                     <ul className="collection with-header">
                         <li className="collection-header">
                             <h4 className="purple-text center">
-                                
-                                    Leader Board
-                                
+                                Leader Board
                             </h4>
                         </li>
                         {SortedArray.map((v,i) => <li key={v.id} className="collection-item">

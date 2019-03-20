@@ -7,36 +7,36 @@ class AnswerQuestion extends Component {
         selectedAnswer: "",
     }
     whenSubmit = (quId) => {
-        if(this.state.selectedAnswer === ""){
+        if (this.state.selectedAnswer === "") {
             return;
         }
         this.props.addAnswer(this.props.cUser.id, quId, this.state.selectedAnswer);
-        this.setState({selectedAnswer: ""})
+        this.setState({ selectedAnswer: "" })
         this.props.history.push(`/viewPoll/${quId}`)
     }
     whenSelected = (event) => {
-        const {name, value} = event.target;
-        this.setState({[name] : value})
+        const { name, value } = event.target;
+        this.setState({ [name]: value })
     }
     whenEmpty = () => {
         return this.state.selectedAnswer === ""
     }
     render() {
         const { qu,
-            pb} = this.props;
+            pb } = this.props;
         return (
             <div className="container">
                 <br />
-               <Question
-                        key={qu.id}
-                        question={qu}
-                        postedBy={pb}
-                        oc={this.whenSubmit}
-                        wc = {this.whenSelected}
-                        bText="Submit"
-                        check="AnswerQuestion"
-                        we={this.whenEmpty}
-                    />
+                <Question
+                    key={qu.id}
+                    question={qu}
+                    postedBy={pb}
+                    oc={this.whenSubmit}
+                    wc={this.whenSelected}
+                    bText="Submit"
+                    check="AnswerQuestion"
+                    we={this.whenEmpty}
+                />
             </div>
         );
     }

@@ -22,7 +22,7 @@ class SignIn extends Component {
     }
     render() {
         const { selectedIndex } = this.state;
-        const {allUsers} = this.props;
+        const { allUsers } = this.props;
         return (
             <div className="conatiner">
                 <br />
@@ -38,8 +38,8 @@ class SignIn extends Component {
                                     <img src={Logo} alt="logo" className="Logo" />
                                 </div>
                                 <div className="purple-text center flow-text">
-                                
-                                <b>Sign in</b></div>
+
+                                    <b>Sign in</b></div>
                                 <div className="center">
                                     <DropDown
                                         SI={selectedIndex}
@@ -66,7 +66,7 @@ class SignIn extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        allUsers: state.auth.AllUsers, 
+        allUsers: state.auth.AllUsers,
     }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -74,4 +74,4 @@ const mapDispatchToProps = (dispatch) => {
         signingIn: (user) => dispatch(SignInUser(user))
     }
 }
-export default connect(mapStateToProps,mapDispatchToProps)(SignIn);
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

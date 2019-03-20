@@ -10,9 +10,9 @@ class Home extends Component {
         this.setState({ value });
     };
     changeRoute = (qId) => {
-        this.state.value === 0 ? this.props.history.push(`/answerQuestion/${qId}`) : 
-        (this.props.history.push(`/viewPoll/${qId}`));
-     };
+        this.state.value === 0 ? this.props.history.push(`/answerQuestion/${qId}`) :
+            (this.props.history.push(`/viewPoll/${qId}`));
+    };
     render() {
         const { value } = this.state;
         const { answeredQuestions, unAnsweredQuestions, allUsers } = this.props;
@@ -23,7 +23,7 @@ class Home extends Component {
                     wc={this.handleChange}
                     value={value}
                 />
-                {   Questions.length > 0 ? (
+                {Questions.length > 0 ? (
                     Questions.map(v => <Question
                         key={v.id}
                         question={v}
@@ -33,7 +33,9 @@ class Home extends Component {
                         check="Home"
                     />
                     )
-                    ) : (<div className="center grey-text darken-1"><h5>Yayy! you answered all questions.</h5></div>)
+                ) : (<div className="center grey-text darken-1">
+                    <h5>Yayy! you answered all questions.</h5>
+                </div>)
                 }
             </div>
         );
@@ -51,7 +53,6 @@ const mapStateToProps = ({ que, auth }) => {
                 q.optionTwo.votes.indexOf(CuserId) === -1)
         ).reverse(),
         allUsers: auth.AllUsers,
-
     }
 }
 export default connect(mapStateToProps)(Home);
