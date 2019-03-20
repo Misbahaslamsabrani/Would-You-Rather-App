@@ -44,11 +44,11 @@ const mapStateToProps = ({ que, auth }) => {
         answeredQuestions: que.AllQuestions.filter(q =>
             (q.optionOne.votes.indexOf(CuserId) !== -1 ||
                 q.optionTwo.votes.indexOf(CuserId) !== -1)
-        ),
+        ).reverse(),
         unAnsweredQuestions: que.AllQuestions.filter(q =>
             (q.optionOne.votes.indexOf(CuserId) === -1 &&
                 q.optionTwo.votes.indexOf(CuserId) === -1)
-        ),
+        ).reverse(),
         allUsers: auth.AllUsers,
 
     }
