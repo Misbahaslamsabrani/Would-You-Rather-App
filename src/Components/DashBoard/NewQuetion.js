@@ -34,9 +34,10 @@ class NewQuestion extends Component {
         const { mess, removeMess } = this.props;
         return (
             <div className="container">
+                <br />
                 <div className="row">
                     <div className="col l10 m10 s12 offset-l1 offset-m1">
-                        <div className="card lime lighten-5">
+                        <div className="card z-depth-2">
                             <div className="card-content">
                                 <div className="card-title center purple-text">
                                     <h4> Create New Question </h4>
@@ -45,7 +46,7 @@ class NewQuestion extends Component {
                                     <span className="center purple-text">
                                         {mess}
                                     </span>
-                                    <button className="black-text crossButton" onClick={() => removeMess()}>
+                                    <button className="black-text crossButton form_a" onClick={() => removeMess()}>
                                         x
                                     </button>
                                 </div>}

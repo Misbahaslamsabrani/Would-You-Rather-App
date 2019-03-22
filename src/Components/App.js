@@ -13,10 +13,12 @@ import AnswerQuestion from './ReUsableComponents/AnswerQuestion';
 import ViewPoll from './ReUsableComponents/ViewPoll';
 
 class App extends Component {
+
   componentDidMount() {
     this.props.getUsers();
     this.props.getQuestions();
   }
+
   render() {
     return (
       <div className="App">
@@ -36,16 +38,19 @@ class App extends Component {
     );
   }
 }
+
 const mapStateToProps = (state) => {
   return {
     user: state.auth.currentUser,
     userFlag: state.auth.currentUserFlag,
   }
 }
+
 const mapDispatchToProps = (dispatch) => {
   return {
     getUsers: () => dispatch(GET_USERS()),
     getQuestions: () => dispatch(GET_QUESTIONS()),
   }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(App);
