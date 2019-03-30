@@ -12,20 +12,20 @@ In order to install and use this project you must run two commands in the consol
 
 These two commands will install all of the dependencies needed for this project and will start the server
 
-* ## Fisrt Page OF App
+* ## Welcome Page
 <img src="App%20SS/1.png">
 
-Here you got `Select User` When you click on that, you will get a list of users (select one and signIn)
+Here you got `Select User` When you click on that, you will get a list of users; select one and `Sign In`
 
 * ### Dashboard 
 
 <img src="App%20SS/3.png" height="300" />
 
-On `side navbar` you will get different options.
+On `side navbar` you will see different options.
 
 # Home
 
-on home page, you will get answered and unanswered questions tab. 
+on home page, you will get answered and unanswered questions tabs. 
 
 <img src="App%20SS/4.png" height="200" />
 
