@@ -8,9 +8,9 @@ export const GET_QUESTIONS = () => {
 }
 
 export const Add_NEW_QUESTION = (question) => {
+    console.log(question)
     return dispatch => {
             _saveQuestion(question).then(data => dispatch({type: Types.addingQuestion, newquestion: data}))
-
     }
 }
 export const Remove_Message = () => {

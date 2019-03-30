@@ -13,14 +13,22 @@ class NewQuestion extends Component {
         this.setState({ [name]: value })
     }
     whenSubmit = () => {
+        if(this.state.Option1 === this.state.Option2){
+            alert("Both options can't be same");
+            return
+        }
+        else if(this.state.Option1 === "" | this.state.Option2 === ""){
+            alert("Option1 or Option2 can't be empty")
+            return
+        }
         this.props.AddNewQuestion({
-            optionOneText: this.state.Option1,
-            optionTwoText: this.state.Option2,
+            optionOneText: this.state.Option1.trim(),
+            optionTwoText: this.state.Option2.trim(),
             author: this.props.user.id
         });
         this.setState({
-            Option1: ' ',
-            Option2: " "
+            Option1: '',
+            Option2: ""
         })
     }
     whenEmpty = () => {
@@ -57,7 +65,7 @@ class NewQuestion extends Component {
                                     labelText="Type First Option Here"
                                 />
                                 <div className="flow-text grey-text center">
-                                    OR
+                                   ----- OR -----
                                 </div>
                                 <InputField
                                     n="Option2"

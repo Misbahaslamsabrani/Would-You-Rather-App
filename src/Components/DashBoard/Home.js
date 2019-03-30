@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import TabBar from '../ReUsableComponents/TabBar';
 import Question from '../ReUsableComponents/Question';
 import { connect } from 'react-redux';
+import Loader from '../Loader/Loader';
 class Home extends Component {
     state = {
         value: 0,
@@ -18,7 +19,8 @@ class Home extends Component {
         const { answeredQuestions, unAnsweredQuestions, allUsers } = this.props;
         const Questions = value === 0 ? unAnsweredQuestions : answeredQuestions;
         return (
-            <div className="container">
+            <Fragment>
+           {this.props.loader ? ( <div className="container">
                 <TabBar
                     wc={this.handleChange}
                     value={value}
@@ -37,7 +39,8 @@ class Home extends Component {
                     <h5>Yayy! you answered all questions.</h5>
                 </div>)
                 }
-            </div>
+            </div>) : (<Loader />)}
+           </Fragment>
         );
     }
 }
@@ -53,6 +56,7 @@ const mapStateToProps = ({ que, auth }) => {
                 q.optionTwo.votes.indexOf(CuserId) === -1)
         ).reverse(),
         allUsers: auth.AllUsers,
+        loader: que.AllQuestionsFlag,
     }
 }
 export default connect(mapStateToProps)(Home);

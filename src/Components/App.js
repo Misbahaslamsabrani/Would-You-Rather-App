@@ -11,6 +11,7 @@ import LeaderBoard from './DashBoard/LeaderBoard';
 import NewQuetion from './DashBoard/NewQuetion';
 import AnswerQuestion from './ReUsableComponents/AnswerQuestion';
 import ViewPoll from './ReUsableComponents/ViewPoll';
+import ErrorPage from './DashBoard/ErrorPage';
 
 class App extends Component {
 
@@ -31,6 +32,7 @@ class App extends Component {
               <Route exact path="/newQuestion" component={NewQuetion} />
               <Route exact path="/answerQuestion/:id" component={AnswerQuestion} />
               <Route exact path="/viewPoll/:id" component={ViewPoll} />
+              <Route exact component={ErrorPage} />
             </Switch>
           </Fragment>
         </Router>) : (<SignIn />)}
